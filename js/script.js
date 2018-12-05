@@ -10,42 +10,56 @@ $(document).ready(function() {
         var q3Result = $("#genre").val();
         var q4Result = $("#value").val();
         var totalScore = q1(q1Result) + q2(q2Result) + q3(q3Result) + q4(q4Result);
-        console.log(q2(q2Result));
+        
+function displayResult(name, placement, imgSrc){
+    return $(".result").html("<h2>Congratulations, " + name + " you're going to be working at " + placement + "</h2>"+"<img src=" +imgSrc+">");
+}
 function q1(choice){
     if(choice === "Jazz"){
-        return 1;
+        return 5;
     }else if(choice === "Rock"){
-        return 2;
+        return 10;
     }else if(choice === "Classical"){
-        return 3;
+        return 15;
     }
 }
+
 function q2(choice){
     if(choice === "Reading"){
-        return 1;
+        return 5;
     }else if(choice === "Sports"){
-        return 2;
+        return 10;
     }else if(choice === "Learning"){
-        return 3;
+        return 15;
     }
 }
 function q3(choice){
     if(choice === "RPG's"){
-        return 1;
+        return 5;
     }else if(choice === "Shooters"){
-        return 2;
+        return 10;
     }else if(choice === "Platformers"){
-        return 3;
+        return 15;
     }
 }
 function q4(choice){
     if(choice === "Movement"){
-        return 1;
+        return 5;
     }else if(choice === "Content"){
-        return 2;
+        return 10;
     }
 }
+function placement(name, totalScore){
+    var imgSrc;
+    var placement;
+    if(totalScore >= 20 && totalScore <= 35){
+         placement="Melee"
+         imgSrc="https://media.giphy.com/media/GBhoTh8AQcOXe/giphy.gif";
+         displayResult(placement,name,imgSrc);
+    }else if(totalScore >= 40 && totalScore <=45){
+        
+    }
+}
+
     });
-    
-    
 });
